@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.ruitchyweb653820" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>RUItchyWeb</name>
+<widget id="com.ionicframework.ruitchyionic853307" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>RUItchyIonic</name>
   <description>
         An Ionic Framework and Cordova project.
     </description>
