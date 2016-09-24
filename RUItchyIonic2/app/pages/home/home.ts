@@ -22,7 +22,7 @@ export class HomePage {
       // imageData is a base64 encoded string
         this.base64Image = "data:/image/jpeg;base64," + imageData;
     }, (err) => {
-        console.log(err);
+        console.log(err);cd 
     });
   }
 }
