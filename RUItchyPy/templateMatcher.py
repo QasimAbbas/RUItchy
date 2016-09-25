@@ -15,7 +15,7 @@ with open(filename, 'wb') as f:
     f.write(imgdata)
 
 def analyze():
-	flag = False	#flag is used as an 'output', so that we can see whether the image was analyzed with positive results or not.
+	flag = True	#flag is used as an 'output', so that we can see whether the image was analyzed with positive results or not.
 	img_bgr = cv2.imread('image_to_be_analyzed.jpg')	
 	img_gray = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2GRAY) #adds a grayscale to the image to be analyzed. Didn't have enough time to fully flesh out why, but it has something to do with scaling.
 
@@ -31,10 +31,13 @@ def analyze():
 		flag = True		#if a rectangle/match is found, we'll have a match!
 		break
 
-	cv2.imshow('detected', img_bgr) # Part of a UI feature that shows us the picture post analysis. Can be removed at our discretion.
+#	cv2.imshow('detected', img_bgr) # Part of a UI feature that shows us the picture post analysis. Can be removed at our discretion.
 	
-	print flag
+#	print flag
+
+	firebase.post('/shape', flag)
 	return
 
 analyze();
-cv2.waitKey(1) # Part of a UI feature that shows us the picture post analysis. Can be removed at our discretion.
+#cv2.waitKey(1) # Part of a UI feature that shows us the picture post analysis. Can be removed at our discretion.
+
