@@ -58,41 +58,13 @@
         <ion-option>Swelling</ion-option>
       </ion-select>
     </ion-item>
-    <!--<ion-searchbar>
-      [(ngModel)]="symptomList"
-      [showCancelButton]="shouldShowCancel"
-      (ionInput)="onInput($event)"
-      (ionCancel)="onCancel($event)">
-    </ion-searchbar>
 
-      <div class="list">
+<br>
 
-        <div class="item item-input-inset">
-          <label class="item-input-wrapper">
-            <input type="text" placeholder="Symptom" id="currentInput">
-          </label>
-          <button class="button button-small" id="addSymptom">
-            OK
-          </button>
-        </div>
-      </div>
+  <!--<div id="diagnosisBox"><button id="diagnosisBtn" (click)="changePage()">Diagnosis</button></div>-->
 
-  <!--<div id="AddItem">
-    <h3>Add Item</h3>
-    <input value="" type="text" placeholder="Name of Item" ng-model="itemName">
-    <br />
-    <button ng-click="addItem(itemName)">Add to list</button>
-  </div>
-  <div id="UncheckedList">
-    <h4>Unchecked:</h4>
-    <table>
-      <tr ng-repeat="item in items" class="item-unchecked">
-        <td><b>name:</b> {{item.name}} -</td>
-        <td>
-          <button ng-click="removeItem($index)">remove</button>
-        </td>
-      </tr>
-    </table>
-  </div>-->
+  <ion-nav-buttons side="secondary">
+    <a class="button diagnosisBox" href="../pages/about/about.html">Diagnosis</a>
+  </ion-nav-buttons>
 
 </ion-content>

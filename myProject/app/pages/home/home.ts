@@ -25,13 +25,14 @@ export class HomePage implements OnInit{
     }).then((imageData) => {
       // imageData is a base64 encoded string
       this.base64Image = imageData;
-      alert(this.base64Image);
+      //alert(this.base64Image);
       console.log(this.base64Image);
       this.sendImgString("" + this.base64Image);
     }, (err) => {
       console.log(err);
     });
   }
+
 
   ngOnInit(){
     function writeUserData(userId, name, email, imageUrl) {
@@ -41,7 +42,7 @@ export class HomePage implements OnInit{
         profile_picture : imageUrl
       });
     }
-    // writeUserData(12,"Victor","vi4tle@yahoo.com","jurl.jpg");
+
   }
 
 
@@ -51,27 +52,28 @@ export class HomePage implements OnInit{
     });
   }
 
-  /*document.getElementById("addSymptom").addEventListener("click", function(){
-    var currInput = document.getElementById("currentInput").value;
-    var ul = document.getElementById("symptomListList");
-    var li = document.createElement("li");
-    li.appendChild(currInput);
-    ul.appendChild(li);
-  });*/
+  var app = angular.module('myApp', ['ionic']);
+  app.config(function($stateProvider, $urlRouterProvider) {
+  $stateProvider
 
-  /*var app = angular.module("myApp",[]);
-  app.controller("myController", function($scope){
-  $scope.name="asd";
-  $scope.items = [];
-  $scope.addItem = function (itemName) {
-    $scope.items.push({
-      name: itemName
-    });
-    $scope.itemName = "";
-  };
+    .state('tab', {
+      url: "/tab",
+      abstract: true,
+      templateUrl: 'tabs.html'
+    })
 
-  $scope.removeItem = function (index) {
-    $scope.items.splice(index, 1);
-  };
-})*/
+    .state('tab.diagnosis', {
+      url: '/diagnosis',
+      views: {
+        'tab-diagnosis': {
+          templateUrl: 'tab-diagnosis.html',
+          controller: 'PostsCtrl'
+        },
+      }
+    })
+
+
+  $urlRouterProvider.otherwise('/tab/posts');
+
+});
 }

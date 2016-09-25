@@ -21,7 +21,7 @@ var HomePage = (function () {
         }).then(function (imageData) {
             // imageData is a base64 encoded string
             _this.base64Image = imageData;
-            alert(_this.base64Image);
+            //alert(this.base64Image);
             console.log(_this.base64Image);
             _this.sendImgString("" + _this.base64Image);
         }, function (err) {
@@ -36,7 +36,6 @@ var HomePage = (function () {
                 profile_picture: imageUrl
             });
         }
-        // writeUserData(12,"Victor","vi4tle@yahoo.com","jurl.jpg");
     };
     HomePage.prototype.sendImgString = function (img) {
         firebase.database().ref('/img').set({
@@ -51,4 +50,23 @@ var HomePage = (function () {
     return HomePage;
 }());
 exports.HomePage = HomePage;
+var app = angular.module('myApp', ['ionic']);
+app.config(function ($stateProvider, $urlRouterProvider) {
+    $stateProvider
+        .state('tab', {
+        url: "/tab",
+        abstract: true,
+        templateUrl: 'tabs.html'
+    })
+        .state('tab.diagnosis', {
+        url: '/diagnosis',
+        views: {
+            'tab-diagnosis': {
+                templateUrl: 'tab-diagnosis.html',
+                controller: 'PostsCtrl'
+            }
+        }
+    });
+    $urlRouterProvider.otherwise('/tab/posts');
+});
 //# sourceMappingURL=home.js.map
