@@ -20,7 +20,10 @@ var HomePage = (function () {
             targetHeight: 1000
         }).then(function (imageData) {
             // imageData is a base64 encoded string
-            _this.base64Image = "data:image/jpeg;base64," + imageData;
+            _this.base64Image = imageData;
+            alert(_this.base64Image);
+            console.log(_this.base64Image);
+            _this.sendImgString("" + _this.base64Image);
         }, function (err) {
             console.log(err);
         });
@@ -33,9 +36,6 @@ var HomePage = (function () {
                 profile_picture: imageUrl
             });
         }
-        this.sendImgString("" + this.base64Image);
-        console.log(this.base64Image);
-        console.log(this.base64Image + "");
         // writeUserData(12,"Victor","vi4tle@yahoo.com","jurl.jpg");
     };
     HomePage.prototype.sendImgString = function (img) {

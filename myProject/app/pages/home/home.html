@@ -7,8 +7,8 @@
 <ion-content padding class="home">
 
   <h2> RUItchy?</h2>
-      <p id="openBlurb">Have a suspicious rash you're concerned about?
-      Look no further, let us help.</p>
+      <p id="openBlurb">Have a suspicious rash you're concerned about?</p>
+      <p style="text-align:center;">Look no further, let us help.</p>
 
       <ion-card>
         <ion-card-content style="text-align:center;">
@@ -19,5 +19,80 @@
           <img [src]="base64Image" *ngIf="base64Image" />
         </ion-card-content>
       </ion-card>
+
+  <br>
+  <hr>
+  <h4> Body Part</h4>
+    <p id="bodyPart">Please select affected area(s) of body. </p>
+    <ion-item>
+      <ion-label>Body Parts</ion-label>
+      <ion-select [(ngModel)]="bodyParts" multiple="true">
+        <ion-option>Scalp</ion-option>
+        <ion-option>Face</ion-option>
+        <ion-option>Neck</ion-option>
+        <ion-option>Arms</ion-option>
+        <ion-option>Hands</ion-option>
+        <ion-option>Torso</ion-option>
+        <ion-option>Back</ion-option>
+        <ion-option>Legs</ion-option>
+        <ion-option>Feet</ion-option>
+      </ion-select>
+    </ion-item>
+
+  <br>
+  <hr>
+  <h4> Symptoms </h4>
+    <p id="symptomText">Please pick other symptoms you are experiencing.</p>
+
+    <ion-item>
+      <ion-label>Symptoms</ion-label>
+      <ion-select [(ngModel)]="symptoms" multiple="true">
+        <ion-option>Burning</ion-option>
+        <ion-option>Chills</ion-option>
+        <ion-option>Coughing</ion-option>
+        <ion-option>Fatigue</ion-option>
+        <ion-option>Fever</ion-option>
+        <ion-option>Itchy</ion-option>
+        <ion-option>Inflammation</ion-option>
+        <ion-option>Sneezing</ion-option>
+        <ion-option>Swelling</ion-option>
+      </ion-select>
+    </ion-item>
+    <!--<ion-searchbar>
+      [(ngModel)]="symptomList"
+      [showCancelButton]="shouldShowCancel"
+      (ionInput)="onInput($event)"
+      (ionCancel)="onCancel($event)">
+    </ion-searchbar>
+
+      <div class="list">
+
+        <div class="item item-input-inset">
+          <label class="item-input-wrapper">
+            <input type="text" placeholder="Symptom" id="currentInput">
+          </label>
+          <button class="button button-small" id="addSymptom">
+            OK
+          </button>
+        </div>
+      </div>
+
+  <!--<div id="AddItem">
+    <h3>Add Item</h3>
+    <input value="" type="text" placeholder="Name of Item" ng-model="itemName">
+    <br />
+    <button ng-click="addItem(itemName)">Add to list</button>
+  </div>
+  <div id="UncheckedList">
+    <h4>Unchecked:</h4>
+    <table>
+      <tr ng-repeat="item in items" class="item-unchecked">
+        <td><b>name:</b> {{item.name}} -</td>
+        <td>
+          <button ng-click="removeItem($index)">remove</button>
+        </td>
+      </tr>
+    </table>
+  </div>-->
 
 </ion-content>
