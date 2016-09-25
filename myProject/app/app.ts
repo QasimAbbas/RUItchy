@@ -21,10 +21,4 @@ export class MyApp {
     });
   }
 }
-$scope.create = function() {
-  $state.go('tab.diagnosis');
-};
-$scope.close = function() {
-  $state.go('tabs');
-};
 ionicBootstrap(MyApp);

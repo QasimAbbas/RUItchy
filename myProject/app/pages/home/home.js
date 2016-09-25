@@ -50,23 +50,4 @@ var HomePage = (function () {
     return HomePage;
 }());
 exports.HomePage = HomePage;
-var app = angular.module('myApp', ['ionic']);
-app.config(function ($stateProvider, $urlRouterProvider) {
-    $stateProvider
-        .state('tab', {
-        url: "/tab",
-        abstract: true,
-        templateUrl: 'tabs.html'
-    })
-        .state('tab.diagnosis', {
-        url: '/diagnosis',
-        views: {
-            'tab-diagnosis': {
-                templateUrl: 'tab-diagnosis.html',
-                controller: 'PostsCtrl'
-            }
-        }
-    });
-    $urlRouterProvider.otherwise('/tab/posts');
-});
 //# sourceMappingURL=home.js.map

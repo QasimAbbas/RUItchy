@@ -27,11 +27,5 @@ var MyApp = (function () {
     return MyApp;
 }());
 exports.MyApp = MyApp;
-$scope.create = function () {
-    $state.go('tab.diagnosis');
-};
-$scope.close = function () {
-    $state.go('tabs');
-};
 ionic_angular_1.ionicBootstrap(MyApp);
 //# sourceMappingURL=app.js.map

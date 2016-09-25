@@ -52,7 +52,7 @@ export class HomePage implements OnInit{
     });
   }
 
-  var app = angular.module('myApp', ['ionic']);
+  /*var app = angular.module('myApp', ['ionic']);
   app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
@@ -75,5 +75,5 @@ export class HomePage implements OnInit{
 
   $urlRouterProvider.otherwise('/tab/posts');
 
-});
+});*/
 }
